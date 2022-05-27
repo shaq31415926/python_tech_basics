@@ -1,1 +1,3 @@
-# python_tech_basics
+# Technological Basics: Python
+
+This repository contains all the python scripts for the technological basic course.
