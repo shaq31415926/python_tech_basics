@@ -29,7 +29,7 @@ while True:
 
     print("The answer is", str(answer)) # print the final answer
 
-    calculate_again = input("Calculate again? Y/N")
+    calculate_again = input("Calculate again? Y/N:")
     if calculate_again.lower() != "y": # != is not equal
         print("I am going to close the calculator now")
         break
