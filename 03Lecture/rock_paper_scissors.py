@@ -11,8 +11,9 @@ player_1_selection = input("Player 1 - Enter a choice (rock, paper, scissors): "
 player_1_selection  = player_1_selection.lower() # lowercase the input
 
 player_2_selection = input("Player 2 - Enter a choice (rock, paper, scissors): ")
-player_2_selection  = player_1_selection.lower() # lowercase the input
+player_2_selection  = player_2_selection.lower() # lowercase the input
 
+## do not do next part without testing the first part
 
 # v1 of the if else statement
 if player_1_selection == "rock":
@@ -29,8 +30,8 @@ elif player_1_selection == "paper":
         print("The second player wins")
     else:
         print("The first player wins")
-elif player_1_selection == selection:
-    if player_2_selection == selection:
+elif player_1_selection == "scissors":
+    if player_2_selection == "scissors":
         print("The players draw")
     elif player_2_selection == "rock":
         print("The second player wins")

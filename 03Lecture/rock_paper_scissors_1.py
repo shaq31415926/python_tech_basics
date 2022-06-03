@@ -5,8 +5,6 @@
 # Scissors cut paper.
 # Now that you have the rules down, you can start thinking about how they might translate to Python code.
 # --------
-
-
 while True:
     # Take the user input - two users enters their choice
     player_1_selection = input("Player 1 - Enter a choice (rock, paper, scissors): ")
