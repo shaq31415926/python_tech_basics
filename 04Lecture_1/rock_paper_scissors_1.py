@@ -3,8 +3,6 @@
 
 import random # we can use this module to simulate the computerÄs choices
 
-
-
 # --------
 # What Is Rock Paper Scissors?
 # Rock smashes scissors.
