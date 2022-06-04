@@ -1,6 +1,10 @@
+# Super cool code by Eldrik that errors if you enter an incorrect option
+
+
 player_1_selection = input("Player 1 - Enter a choice (rock, paper,
 scissors):")
 player_1_selection = player_1_selection.lower() #lowercase the input
+
 
 
 
