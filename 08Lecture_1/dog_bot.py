@@ -2,7 +2,7 @@ from telegram import *
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
 
-YOUR_TOKEN = "2021611058:AAFJkhuzdFOw5JYCZ26pvjATe2sKxD_fG6o"
+YOUR_TOKEN = ""
 
 def get_dog_image():
     """Access the API and get the image URL"""
