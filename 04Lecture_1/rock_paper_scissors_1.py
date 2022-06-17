@@ -20,7 +20,6 @@ user_action  = user_action.lower() # lowercase the input
 possible_actions = ["rock", "paper", "scissors"]
 computer_action = random.choice(possible_actions)
 
-
 print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
 print("-"*50)
 # run this script! You should have the users choice and the computer choice.

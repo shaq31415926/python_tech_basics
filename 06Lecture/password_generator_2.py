@@ -45,4 +45,6 @@ random.shuffle(password)
 ## converting the list to string
 ## printing the list
 password_generated = "".join(password)
-print(f"The generated password with {alphabets_count} alphabets, {digits_count} digits, {special_characters_count} special characters is:", password_generated)
+print(f"The generated password with {alphabets_count} alphabets,
+		{digits_count} digits,
+		{special_characters_count} special characters is:", password_generated)

@@ -1,8 +1,7 @@
 import string
 import random
 
-# reference: https://geekflare.com/password-generator-python-code/
-
+# hacker 101
 
 
 def password_generator(characters, length):
