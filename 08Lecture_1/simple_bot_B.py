@@ -2,7 +2,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # create a token variable
-YOUR_TOKEN = "2021611058:AAFJkhuzdFOw5JYCZ26pvjATe2sKxD_fG6o"
+YOUR_TOKEN = ".."
 
 def start(update, context):
     """When the user starts the following message will send"""
