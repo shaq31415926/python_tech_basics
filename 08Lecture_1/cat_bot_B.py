@@ -1,13 +1,32 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
+from telegram import *
 
-YOUR_TOKEN = "..."
+
+YOUR_TOKEN = ".."
+random_cat_image = "Click here for random cat image!"
+
 
 def get_cat_image():
     contents = requests.get("https://cataas.com//cat")
-    cat_image = contents.contents
+    cat_image = contents.content
 
     return cat_image
+
+
+def start(update, context):
+    button = [[KeyboardButton(random_cat_image)]]
+    reply_kb_markup = ReplyKeyboardMarkup(button)
+    message = "Hello! Welcome to my cat bot :)"
+    context.bot.sendMessage(chat_id = update.message.chat_id, text=message, reply_markup=reply_kb_markup)
+
+
+def message_handler(update, context):
+    if random_cat_image in update.message.text:
+        image = get_cat_image()
+
+    if image:
+        context.bot.send_photo(chat_id=update.effective_chat.id, photo=image)
 
 
 def main():
@@ -17,7 +36,7 @@ def main():
     updater = Updater(YOUR_TOKEN, use_context = True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
-
+    dp.add_handler(MessageHandler(Filters.text, message_handler))
     updater.start_polling()
     updater.idle()
 
