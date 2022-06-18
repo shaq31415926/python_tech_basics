@@ -3,7 +3,7 @@ import requests
 from telegram import *
 
 
-YOUR_TOKEN = ".."
+YOUR_TOKEN = ""
 random_cat_image = "Click here for random cat image!"
 
 
@@ -15,7 +15,7 @@ def get_cat_image():
 
 
 def start(update, context):
-    button = [[KeyboardButton(random_cat_image)]]
+    button = [[KeyboardButton("Click here for random cat image!")]]
     reply_kb_markup = ReplyKeyboardMarkup(button)
     message = "Hello! Welcome to my cat bot :)"
     context.bot.sendMessage(chat_id = update.message.chat_id, text=message, reply_markup=reply_kb_markup)

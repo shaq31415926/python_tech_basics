@@ -2,7 +2,7 @@ from telegram import *
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
 
-YOUR_TOKEN = ""
+YOUR_TOKEN = "2021611058:AAFJkhuzdFOw5JYCZ26pvjATe2sKxD_fG6o"
 random_dog_image = "Random Dog Image"
 random_cat_image = "Random Cat Image"
 
