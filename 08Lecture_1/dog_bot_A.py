@@ -4,7 +4,7 @@ from telegram import *
 import requests
 
 # define Your token
-YOUR_TOKEN = "2021611058:AAFJkhuzdFOw5JYCZ26pvjATe2sKxD_fG6o"
+YOUR_TOKEN = ".."
 
 def get_dog_image():
     """Access the API that contains a dog image"""
