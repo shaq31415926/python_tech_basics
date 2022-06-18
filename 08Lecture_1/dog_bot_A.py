@@ -31,10 +31,9 @@ def message_handler(update, context):
     if image:
         context.bot.send_photo(chat_id = update.effective_chat.id, photo = image)
 
-    buttons = [[InlineKeyboardButton("👍")], [InlineKeyboardButton("👎")]]
-    context.bot.send_message(chat_id=update.effective_chat.id,
-    reply_markup=InlineKeyboardButton(buttons),
-    text="Did you like this image?")
+    buttons = [[InlineKeyboardButton("👍", callback_data="like")], [InlineKeyboardButton("👎", callback_data="dislike")]]
+    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text = "Did you like the image?")
+
 
 
 def main():
