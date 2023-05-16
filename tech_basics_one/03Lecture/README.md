@@ -54,6 +54,7 @@ MAC users:
 ```
 
 4. Create a script called gui_calculator.py and execute the code that you can copy from [here](https://github.com/shaq31415926/python_tech_basics/blob/main/tech_basics_one/03Lecture/gui_calculator_demo.py).
+
 5. Run the code
 
 Window users:
