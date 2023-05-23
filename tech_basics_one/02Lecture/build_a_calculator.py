@@ -1,9 +1,9 @@
 # The input() function allows user input.
 # Ask the user to input two numbers and operator
 
-num1 = input("First Number:\n")
-operator = input("Operator (+, -, *, /):\n")
-num2 = input("Second Number:\n")
+num1 = input("Please enter the First Number:\n")
+operator = input("Please specify the Operator (+, -, *, /):\n")
+num2 = input("Please enter the Second Number:\n")
 
 # convert the number to float
 num1 = float(num1)
