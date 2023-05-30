@@ -35,25 +35,26 @@ while True:
     # otherwise, depending on player selection define which player wins or loses
     else:
         if player_1_selection == "rock":
-            if player_2_selection == "rock":
-                print("The players draw")
-            elif player_2_selection == "paper":
-                print("The second player wins")
-            else:
-                print("The first player wins")
-        elif player_1_selection == "paper":
             if player_2_selection == "paper":
-                print("The players draw")
+                print("Paper covers rock - The computer wins")
             elif player_2_selection == "scissors":
-                print("The second player wins")
+                print("Rock smashes scissors - You win")
             else:
-                print("The first player wins")
-        elif player_1_selection == "scissors":
+                print("Error - option does not exist")
+
+        elif player_1_selection == "paper":
             if player_2_selection == "scissors":
-                print("The players draw")
+                print("Scissor cuts paper - The computer wins")
             elif player_2_selection == "rock":
-                print("The second player wins")
+                print("Paper cover rocks - You win")
             else:
-                print("The first player wins")
+                print("Error - option does not exist")
+        elif player_1_selection == "scissors":
+            if player_2_selection == "rock":
+                print("Rock smashes scissors - The computer wins")
+            elif player_2_selection == "paper":
+                print("Scissor cuts paper - You win")
+            else:
+                print("Error - option does not exist")
         print("Thank you for playing!")
         break
