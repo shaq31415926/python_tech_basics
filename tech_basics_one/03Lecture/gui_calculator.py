@@ -139,7 +139,7 @@ button8 = tk.Button(m,
 button8.grid(row=4, column=1)
 
 button9 = tk.Button(m,
-                    text=' 5 ',
+                    text=' 9 ',
                     fg='black',
                     bg='red',
                     command=lambda: press(9),
