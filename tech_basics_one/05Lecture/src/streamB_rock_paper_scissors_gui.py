@@ -24,5 +24,4 @@ Lab = tk.Label(f1, image=pic)
 Lab.pack()
 f1.pack()
 
-
 root.mainloop()
