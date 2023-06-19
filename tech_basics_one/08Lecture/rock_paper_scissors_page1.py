@@ -33,7 +33,6 @@ nameinp = tk.StringVar()
 inpname = tk.Entry(root, textvar=nameinp, font='arial 15 bold')
 inpname.place(x=230, y=60)
 
-root.mainloop()
 
 # code to execute the code
 root.mainloop()
