@@ -26,10 +26,9 @@ f1.pack()
 name = tk.Label(root, text='Please Enter Your Name :', font='arial 15 bold')
 # where would you like to place this button
 name.place(x=230, y=20)
-# This variable will store the name of user
-nameinp = tk.StringVar()
 
 # create an entry box to store the users name
+nameinp = tk.StringVar() # This variable will store the name of user
 inpname = tk.Entry(root, textvar=nameinp, font='arial 15 bold')
 inpname.place(x=230, y=60)
 
