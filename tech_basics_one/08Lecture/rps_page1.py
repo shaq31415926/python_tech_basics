@@ -10,15 +10,6 @@ root.title("Rock Paper Scissors")
 # code to configure the size
 root.geometry("650x450")
 
-# create a message variable which will print the final message
-message = tk.Label()
-comp_selection = tk.Label()
-user_score_label = tk.Label()
-comp_score_label = tk.Label()
-# keep track of scores
-computer_score = 0
-user_score = 0
-
 # Create the frame for the first windows of the game
 f1 = tk.Frame(root)
 # read the image you want to use for the first fra,e
