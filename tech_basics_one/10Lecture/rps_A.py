@@ -150,7 +150,7 @@ def maingame():
                             )
     exit_button.place(x=500, y=410)
 
-# create a box
+# create a box that when you click on will enter the second page
 play_button = tk.Button(
               text="LET'S PLAY",
               font="lucida 10 bold",
@@ -158,6 +158,14 @@ play_button = tk.Button(
 )
 play_button.place(x=305, y=88)
 
+
+# DID NOT COVER IN CLASS, but you can also go into the second page after pressing enter once you input your name
+# add code that will enter the game when you press enter
+def entergame(event):
+    maingame()
+
+name_box.bind('<Return>',
+             entergame)
 
 # code to execute the code
 root.mainloop()
