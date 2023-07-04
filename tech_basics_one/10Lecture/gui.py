@@ -15,9 +15,8 @@ root.geometry("650x450")
 
 
 def add_image(root, file_path):
-    """This definition will place the image on the gui. 
-    
-    You need to specify the variable name that creates your gui and the  image file path"""
+    """This definition will place the image on the gui window.
+    You need to specify the variable name that creates your gui window and the image file path"""
 
     # for some reason this image will not appear without specifying global variables
     global pic, f1
