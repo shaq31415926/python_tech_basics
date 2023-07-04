@@ -53,7 +53,7 @@ def maingame():
     # add a new image as the background
     add_image(root, file_path="images/pencils.jpeg")
 
-    # create a label - this will only work placing the image on the background
+    # create a label - this will only work after placing the image on the background
     test_label = tk.Label(text=f"Brand One",
                           relief=tk.RAISED,
                           bg='#4834DF',
