@@ -60,7 +60,7 @@ def maingame():
                           fg='#ffffff',
                           borderwidth=5
                           )
-    # if you want to place a background image, grid does not seem to work
+    # if you place a background image, grid does not seem to work to put the labels/buttons
     test_label.place(x=10, y=10)
 
 
