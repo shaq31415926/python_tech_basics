@@ -31,6 +31,7 @@ def add_image(root, file_path):
 
 
 add_image(root, file_path="images/store.jpeg")
+
 def maingame():
     f1.destroy()
     enter_button.destroy()
