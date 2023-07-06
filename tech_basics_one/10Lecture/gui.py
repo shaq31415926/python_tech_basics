@@ -37,6 +37,8 @@ def add_image(root, file_path):
 
 # call our add_image function with the root variable image file path
 add_image(root, file_path="images/store.jpeg")
+
+
 # you should see the image appearing in the first screen
 
 def maingame():
