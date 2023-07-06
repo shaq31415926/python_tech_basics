@@ -84,7 +84,7 @@ def page_one():
     enter_button.place(x=200, y=120)
 
 def back():
-    # destroy all objects we created in second image
+    # destroy all objects we created in second page
     f1.destroy()
     back_button.destroy()
     test_label.destroy()
