@@ -72,5 +72,8 @@ enter_button = tk.Button(text="Click here to enter store",
 # play around with the x and y coordinates to place your button
 enter_button.place(x=200, y=120)
 
+# check our this script here if you want to add a back button that goes to the first page
+# https://github.com/shaq31415926/python_tech_basics/blob/main/tech_basics_one/10Lecture/gui_v2.py
+
 # code to execute the code
 root.mainloop()
