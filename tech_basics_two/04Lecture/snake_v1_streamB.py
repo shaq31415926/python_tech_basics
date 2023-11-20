@@ -41,16 +41,15 @@ while True:
                 x1_change = 0
                 y1_change = 10
 
-    # launch your snake game
-    x1 += x1_change
-    y1 += y1_change
-
-    # we want to exit the game if the snake reaches the borders
+    # FIX: we want to exit the game if the snake reaches the borders
     if x1 < 0 or y1 < 0 or x1 >= disp_width or y1 >= disp_height:
         pg.quit()
         quit()
         # we will build a game over page next week
 
+    # launch your snake game
+    x1 += x1_change
+    y1 += y1_change
     screen.fill(background_colour) # changes the background colour
     pg.draw.rect(screen, snake_colour, [x1, y1, 10, 10]) # code to create a rectangle
     pg.display.update()

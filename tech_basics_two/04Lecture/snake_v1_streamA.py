@@ -43,15 +43,16 @@ while True:
                 x1_change = 0
                 y1_change = 10
 
-    x1 += x1_change
-    y1 += y1_change
-    print(x1, y1)
-
-    # FIX: if your snake goes off the screen exit the game
+    # if your snake goes off the screen exit the game
     if x1 < 0 or y1 < 0 or x1 >= dis_width or y1 >= dis_height:
         pg.quit()
         quit()
         # we will pick this up next week
+
+    # update the x and y coordinates
+    x1 += x1_change
+    y1 += y1_change
+    print(x1, y1)
 
     # running the game
     screen.fill(background_colour)
