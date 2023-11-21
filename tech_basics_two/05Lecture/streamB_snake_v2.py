@@ -33,6 +33,7 @@ game_over = False
 # define the variables to format the snake
 snake_size = 20
 snake_length = 1
+snake_coordinates = []
 
 # define the food variables
 food_colour = 192, 192, 192
@@ -66,10 +67,16 @@ def display_score(screen, snake_length):
     # use the blit method to add this surface
     screen.blit(text, (0, 0))
 
+
 def play_explosion_music():
     # play some music
     pg.mixer.music.load("music/explosion-6801.mp3")
     pg.mixer.music.play()
+
+
+def display_snake(snake_coordinates):
+    for x in snake_coordinates:
+        pg.draw.rect(screen, snake_colour, [x[0], x[1], snake_size, snake_size])
 
 
 while game_over is False:
@@ -106,7 +113,19 @@ while game_over is False:
 
     screen.fill(background_colour) # changes the background colour
     pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size-5, snake_size-5])  # code to create food
-    pg.draw.rect(screen, snake_colour, [x1, y1, snake_size, snake_size]) # code to create a rectangle
+
+    # store the snake head coordinates
+    snake_head = [x1, y1]
+    snake_coordinates.append(snake_head)
+    display_snake(snake_coordinates)
+    #pg.draw.rect(screen, snake_colour, [x1, y1, snake_size, snake_size]) # code to create a rectangle
+    if len(snake_coordinates) > snake_length:
+        del snake_coordinates[0]
+
+    # if the tail reaches head
+    for x in snake_coordinates[:-1]:
+        if x == snake_head:
+            game_over = True
 
     display_score(screen, snake_length)
 
