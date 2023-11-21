@@ -34,9 +34,11 @@ y1_change = 0
 # define variables for the snake size
 snake_size = 20
 snake_length = 1
+# create a list to keep track of our snake coordinates
+snake_coordinates = []
 
 # read the apple image
-#apple_image = pg.image.load("images/Apple.png")
+apple_image = pg.image.load("images/Apple.png")
 
 # add coordinate position for the food - this should be random
 food_x = round(random.randrange(snake_size+10, disp_width - snake_size) / 10.0) * 10.0
@@ -72,12 +74,24 @@ def game_over_message(disp_width, disp_height, display_text):
     # use the blit method to add the text on the page
     screen.blit(text, textRect)
 
+
+def score_message(snake_length, screen):
+    font = pg.font.SysFont('comicsansms', 35)
+    text = font.render(f"Your score is: {snake_length-1}", True, (255, 255, 102))
+    screen.blit(text, [0, 0])
+
+
 def play_explosion_music():
     """This function plays explosion music
 
     This music was downloaded from: https://pixabay.com/sound-effects/search/explosion/"""
     pg.mixer.music.load("music/explosion-6801.mp3")
     pg.mixer.music.play()
+
+
+def display_snake(screen, colour, snake_size, snake_coordinates):
+    for x in snake_coordinates:
+        pg.draw.rect(screen, colour, [x[0], x[1], snake_size, snake_size])
 
 
 # while the game over flag is false, the window stays open
@@ -117,15 +131,31 @@ while game_over is False:
     y1 += y1_change  # update the y coordinates
     screen.fill(background_colour)  # changes the background colour
 
+    # track our coordinates
+    snake_head = [x1, y1]
+    snake_coordinates.append(snake_head)
+
     # code to create food rectangle
-    pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size - 3, snake_size - 3])
-    #screen.blit(apple_image, (food_x, food_y))
-    pg.draw.rect(screen, snake_colour, [x1, y1, snake_size, snake_size])
+    #pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size - 3, snake_size - 3])
+    screen.blit(apple_image, (food_x, food_y))
+    #pg.draw.rect(screen, snake_colour, [x1, y1, snake_size, snake_size])
+    display_snake(screen, snake_colour, snake_size, snake_coordinates)
+
+    if len(snake_coordinates) > snake_length:
+        del snake_coordinates[0]
+
+    # if your snake hits the tail, then game is over
+    for x in snake_coordinates[:-1]:
+        if x == snake_coordinates:
+            game_over = True
+
+    # call our score message definition
+    score_message(snake_length, screen)
 
     # if the food and snake coordinates match, print something
     if x1 == food_x and y1 == food_y:
         snake_length += 1
-        print("yummy, the snake length is", snake_length)
+        #print("yummy, the snake length is", snake_length)
         play_explosion_music()
 
     pg.display.flip()
