@@ -33,13 +33,14 @@ x1_change = 0
 y1_change = 0
 # define variables for the snake size
 snake_size = 20
+snake_length = 1
 
 # read the apple image
 #apple_image = pg.image.load("images/Apple.png")
 
 # add coordinate position for the food - this should be random
-food_x = round(random.randrange(30, disp_width - snake_size) / 10.0) * 10.0
-food_y = round(random.randrange(30, disp_height - snake_size) / 10.0) * 10.0
+food_x = round(random.randrange(snake_size+10, disp_width - snake_size) / 10.0) * 10.0
+food_y = round(random.randrange(snake_size+10, disp_height - snake_size) / 10.0) * 10.0
 # print(food_x, food_y)
 
 # use the Clock method to control the speed
@@ -57,7 +58,7 @@ pg.display.set_caption("SNAKE V2")
 def game_over_message(disp_width, disp_height, display_text):
     # create a message that says the user lost
     # set the font - and the size
-    font = pg.font.SysFont('arialroundedmtbold.ttf', 60)
+    font = pg.font.SysFont('arialroundedmtbold', 60)
     # font = pg.font.Font(None, 32)
 
     # create a text surface object,on which text is drawn on it.
@@ -123,7 +124,8 @@ while game_over is False:
 
     # if the food and snake coordinates match, print something
     if x1 == food_x and y1 == food_y:
-        print("yummy")
+        snake_length += 1
+        print("yummy, the snake length is", snake_length)
         play_explosion_music()
 
     pg.display.flip()
