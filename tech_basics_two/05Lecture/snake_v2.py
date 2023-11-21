@@ -141,6 +141,7 @@ while game_over is False:
     #pg.draw.rect(screen, snake_colour, [x1, y1, snake_size, snake_size])
     display_snake(screen, snake_colour, snake_size, snake_coordinates)
 
+    # we only want to display another rectangle when our snake length increases
     if len(snake_coordinates) > snake_length:
         del snake_coordinates[0]
 
@@ -157,6 +158,8 @@ while game_over is False:
         snake_length += 1
         #print("yummy, the snake length is", snake_length)
         play_explosion_music()
+        food_x = round(random.randrange(snake_size + 10, disp_width - snake_size) / 10.0) * 10.0
+        food_y = round(random.randrange(snake_size + 10, disp_height - snake_size) / 10.0) * 10.0
 
     pg.display.flip()
     clock.tick(30)  # adjust the speed, try 30, 60, 120...
