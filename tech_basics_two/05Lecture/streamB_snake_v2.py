@@ -112,7 +112,9 @@ while game_over is False:
         time.sleep(3.5)
 
     screen.fill(background_colour) # changes the background colour
-    pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size-5, snake_size-5])  # code to create food
+    #pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size-5, snake_size-5])  # code to create food
+    apple_image = pg.image.load("images/Apple.png")
+    screen.blit(apple_image, (food_x, food_y))
 
     # store the snake head coordinates
     snake_head = [x1, y1]
