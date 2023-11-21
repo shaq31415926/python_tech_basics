@@ -1,5 +1,6 @@
 import pygame as pg
 import time
+import random
 
 # This script contains
 # (What we have done so far)
@@ -30,17 +31,19 @@ clock = pg.time.Clock()
 
 game_over = False
 # define the variables to format the snake
-snake_size = 10
+snake_size = 20
+snake_length = 1
 
 # define the food variables
 food_colour = 192, 192, 192
-food_x = 20
-food_y = 20
+# randomise the x and y coordinates
+food_x = round(random.randrange(snake_size+10, disp_width - snake_size)/10) * 10
+food_y = round(random.randrange(snake_size+10, disp_height - snake_size)/10) * 10
 
 
 # create the display screen
 screen = pg.display.set_mode(size)
-pg.display.set_caption("SNAKE V1")
+pg.display.set_caption("SNAKE V2")
 
 def display_message(display_text, width, height, screen):
     # select the font
@@ -86,8 +89,17 @@ while game_over is False:
         time.sleep(3.5)
 
     screen.fill(background_colour) # changes the background colour
-    pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size, snake_size])  # code to create food
+    pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size-3, snake_size-3])  # code to create food
     pg.draw.rect(screen, snake_colour, [x1, y1, snake_size, snake_size]) # code to create a rectangle
+
+    # what happens when the snake eats the food
+    if x1 == food_x and y1 == food_y:
+        snake_length += 1
+        #print("YUMMY, the snake length is", snake_length)
+        # change the position of food
+        food_x = round(random.randrange(snake_size + 10, disp_width - snake_size) / 10) * 10
+        food_y = round(random.randrange(snake_size + 10, disp_height - snake_size) / 10) * 10
+
     pg.display.update()
     clock.tick(30) # adjust the speed, try 30, 60, 120...
 
