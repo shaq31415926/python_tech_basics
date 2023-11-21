@@ -145,9 +145,9 @@ while game_over is False:
     if len(snake_coordinates) > snake_length:
         del snake_coordinates[0]
 
-    # if your snake hits the tail, then game is over
+    # if your snake head hits the tail, then game is over
     for x in snake_coordinates[:-1]:
-        if x == snake_coordinates:
+        if x == snake_head:
             game_over = True
 
     # call our score message definition
