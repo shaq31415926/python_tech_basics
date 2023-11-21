@@ -12,6 +12,7 @@ import random
 # 6. adding the food to the game
 # 7. increasing the length
 # 8. displaying the score
+# 9. ADDED MUSIC
 
 # initialise the pygame library
 pg.init()
