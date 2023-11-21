@@ -57,6 +57,21 @@ def display_message(display_text, width, height, screen):
     # use the blit method to add this surface
     screen.blit(text, textRect)
 
+
+def display_score(screen, snake_length):
+    # select the font
+    font = pg.font.SysFont("comicsansms", 24)
+    # render the text
+    text = font.render(f"The score is {snake_length -1}", True, (255, 255, 102))
+    # use the blit method to add this surface
+    screen.blit(text, (0, 0))
+
+def play_explosion_music():
+    # play some music
+    pg.mixer.music.load("music/explosion-6801.mp3")
+    pg.mixer.music.play()
+
+
 while game_over is False:
     for event in pg.event.get():
         # closes the game if the user clicks exit
@@ -85,12 +100,15 @@ while game_over is False:
         game_over = True
         # we will build a game over page next week
         display_message("GAME OVER :(", disp_width, disp_height, screen)
+        play_explosion_music()
         pg.display.update()
         time.sleep(3.5)
 
     screen.fill(background_colour) # changes the background colour
-    pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size-3, snake_size-3])  # code to create food
+    pg.draw.rect(screen, food_colour, [food_x, food_y, snake_size-5, snake_size-5])  # code to create food
     pg.draw.rect(screen, snake_colour, [x1, y1, snake_size, snake_size]) # code to create a rectangle
+
+    display_score(screen, snake_length)
 
     # what happens when the snake eats the food
     if x1 == food_x and y1 == food_y:
@@ -99,6 +117,8 @@ while game_over is False:
         # change the position of food
         food_x = round(random.randrange(snake_size + 10, disp_width - snake_size) / 10) * 10
         food_y = round(random.randrange(snake_size + 10, disp_height - snake_size) / 10) * 10
+        # play some music
+        play_explosion_music()
 
     pg.display.update()
     clock.tick(30) # adjust the speed, try 30, 60, 120...
