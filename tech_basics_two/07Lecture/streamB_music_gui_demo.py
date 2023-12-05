@@ -3,8 +3,6 @@ import tkinter as tk
 from tkinter.filedialog import askdirectory
 import pygame as pg
 
-# TODO: Update the title so it shows when user selects
-
 # create my gui window
 root = tk.Tk()
 
