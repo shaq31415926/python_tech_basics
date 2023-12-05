@@ -1,5 +1,5 @@
 # Reference: https://thecleverprogrammer.com/2020/12/27/music-player-gui-with-python/
-# # TODO: Update the title so it shows when user selects
+# TODO: Update the title so it shows when user selects
 
 import os
 import tkinter as tk

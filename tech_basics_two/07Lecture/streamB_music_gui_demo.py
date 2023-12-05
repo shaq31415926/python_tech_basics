@@ -37,6 +37,8 @@ for song in song_list:
 # initialise the pygame library
 pg.init()
 
+#
+
 
 def play_music():
     """This plays the music when you click on the play button"""
@@ -44,7 +46,7 @@ def play_music():
     pg.mixer.music.load(play_list.get(tk.ACTIVE))
     pg.mixer.music.play()
     # set the song name at the top
-    song_name.set(play_list.get(tk.ACTIVE))
+    #song_name.set(play_list.get(tk.ACTIVE))
     # reset the pause button if needed
     pause_button.configure(text="PAUSE",
                            command=pause_music
@@ -53,8 +55,12 @@ def play_music():
 
 def play_on_selection(event):
     """This plays this music when you select from the listbox"""
-
     play_music()
+    for i in play_list.curselection():
+        current_song_name = play_list.get(i)
+    # set the song name at the top
+    song_name.set(current_song_name)
+
 
 
 def stop_music():
@@ -71,7 +77,9 @@ def pause_music():
     """This pauses the music when you click on the pause button and then updates to unpause"""
     pg.mixer.music.pause()
     pause_button.configure(text="UNPAUSE",
-                           command=unpause_music
+                           command=unpause_music,
+                           highlightbackground="orange",
+                           highlightthickness=10
                            )
 
 
@@ -80,7 +88,9 @@ def unpause_music():
 
     pg.mixer.music.unpause()
     pause_button.configure(text="PAUSE",
-                           command=pause_music
+                           command=pause_music,
+                           highlightbackground="purple",
+                           highlightthickness=10,
                            )
 
 
@@ -122,7 +132,7 @@ pause_button = tk.Button(root,
                          )
 
 # place the name of the song
-# this does not work well when you select the song from selection
+# this does not work well when you select the song from selection, but works with play button
 song_name = tk.StringVar()
 song_title = tk.Label(root,
                       font="Helvetica 12 bold",
