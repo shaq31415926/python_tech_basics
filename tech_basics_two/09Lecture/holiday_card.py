@@ -26,7 +26,7 @@ background.place(x=0, y=0, relwidth=1, relheight=1)  # these attributes ensure i
 
 greeting = ["HAPPY HOLIDAYS ☃️", "MERRY XMAS 🎄", "HO! HO! HO! 🎅" ]
 # randomise the greetings as well
-
+# place the greeting
 greeting = random.choice(greeting)
 final_label = tk.Label(text=greeting,
                        bg='#ffffff',
