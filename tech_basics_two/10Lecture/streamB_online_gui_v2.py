@@ -13,6 +13,7 @@ screen_height = 400
 
 # option 1: use the minsize function
 root.minsize(screen_width, screen_height)  # width, height
+
 # option 2: use the geometry function, and you can also adjust the x and y position
 # root.geometry(f'{screen_width}x{screen_height}+550+150')  # width, height, start_x, start_y
 
@@ -58,37 +59,50 @@ def create_new_user_page():
 
     # TODO: add a submit info button
 
-    # TODO: add homepage button
+    # add homepage button that goes back to homepage
+    homepage = tk.Button(root,
+                         text="🏠",
+                         command=create_homepage
+                         )
+    homepage.pack(side=tk.BOTTOM)
 
 
 # creating the homepage
-# add a background image
-add_image(root, "images/homepage.jpg", screen_width, screen_height)
+def create_homepage():
+    # clear any widgets that have been created when navigating between pages
+    clear_widgets()
 
-# add a welcome label
-welcome_label = tk.Label(root,
-                         text="WELCOME TO MY ONLINE PET PAGE",
-                         font="Arial 20 bold",
-                         bg="white",
-                         fg="black"
-                         )
-welcome_label.place(x=10, y=10)
+    # add a background image
+    add_image(root, "images/homepage.jpg", screen_width, screen_height)
 
-# add a new and returning user button
-new_user = tk.Button(root,
+    # add a welcome label
+    welcome_label = tk.Label(root,
+                             text="WELCOME TO MY ONLINE PET PAGE",
+                             font="Arial 20 bold",
+                             bg="white",
+                             fg="black"
+                             )
+    welcome_label.place(x=10, y=10)
+
+    # add a new and returning user button
+    new_user = tk.Button(root,
                          text="New user",
                          font=("Comic Sans MS", 14, "bold"),
                          command=create_new_user_page
                          )
-new_user.pack()
+    new_user.pack()
 
-# place a returning user button
-returning_user = tk.Button(root,
-                           text="Returning user",
-                           font=("Comic Sans MS", 14, "bold"),
-                           command=clear_widgets
-                           )
-returning_user.pack()
+    # place a returning user button
+    returning_user = tk.Button(root,
+                               text="Returning user",
+                               font=("Comic Sans MS", 14, "bold"),
+                               command=clear_widgets
+                               )
+    returning_user.pack()
+
+
+# you need to call this definition to create homepage
+create_homepage()
 
 # launch the gui
 root.mainloop()
