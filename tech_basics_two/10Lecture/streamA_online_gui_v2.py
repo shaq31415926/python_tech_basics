@@ -87,7 +87,7 @@ def create_homepage():
     welcome_label.place(x=10, y=10)
 
     # add two buttons new and returning user
-    # on activation these buttons should destroy all the widgets
+    # on activation these buttons should destroy all the widgets and carry out the steps for the page
     new_user = tk.Button(root,
                          text="New User",
                          font=("Comic Sans MS", 14, "bold"),
