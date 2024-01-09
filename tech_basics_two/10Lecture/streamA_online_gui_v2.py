@@ -65,6 +65,8 @@ def new_user_page():
                          )
     homepage.pack(side=tk.BOTTOM)
 
+# TODO: create returning user page definition
+
 
 def create_homepage():
     """This function creates the homepage"""
