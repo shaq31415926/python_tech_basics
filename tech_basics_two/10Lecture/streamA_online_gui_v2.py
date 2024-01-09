@@ -43,35 +43,63 @@ def clear_widgets():
     for i in root.winfo_children():
         i.destroy()
 
-# create the home page
-add_image(root, "images/homepage.jpg", screen_width, screen_height)
 
-# add a welcome label
-welcome_label = tk.Label(root,
-                        text="WELCOME TO MY ONLINE PET PAGE",
-                        font="Arial 20 bold",
-                        fg="black",
-                        bg="white"
-                         )
-welcome_label.place(x=10, y=10)
+def new_user_page():
+    """This function carries out the steps for the new user page"""
 
-# add two buttons new and returning user
-# on activation these buttons should destroy all the widgets
-new_user = tk.Button(root,
-          text="New User",
-          font=("Comic Sans MS", 14, "bold"),
-          command=clear_widgets
-          )
-new_user.pack()
+    # call the definition that clears all the widgets
+    clear_widgets()
+
+    # add a welcome label
+
+    # add data entry boxes and labels
+
+    # create a submit information button
+
+    # add a home page button - this will go back to our home page
+    homepage = tk.Button(root,
+              text="🏠",
+              command=create_homepage
+              )
+    homepage.pack(side=tk.BOTTOM)
+
+def create_homepage():
+    """This function creates the homepage"""
+
+    # clear widgets in the case widgets have been created
+    clear_widgets()
+
+    # create the home page background
+    add_image(root, "images/homepage.jpg", screen_width, screen_height)
+
+    # add a welcome label
+    welcome_label = tk.Label(root,
+                            text="WELCOME TO MY ONLINE PET PAGE",
+                            font="Arial 20 bold",
+                            fg="black",
+                            bg="white"
+                             )
+    welcome_label.place(x=10, y=10)
+
+    # add two buttons new and returning user
+    # on activation these buttons should destroy all the widgets
+    new_user = tk.Button(root,
+              text="New User",
+              font=("Comic Sans MS", 14, "bold"),
+              command=new_user_page
+              )
+    new_user.pack()
 
 
-returning_user = tk.Button(root,
-          text="Returning User",
-          font=("Comic Sans MS", 14, "bold"),
-          command=clear_widgets
-          )
-returning_user.pack()
+    returning_user = tk.Button(root,
+              text="Returning User",
+              font=("Comic Sans MS", 14, "bold"),
+              command=clear_widgets
+              )
+    returning_user.pack()
 
+# call my homepage definition
+create_homepage()
 
 # launch the gui
 root.mainloop()
