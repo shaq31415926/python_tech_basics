@@ -69,6 +69,8 @@ def create_new_user_page():
 
 # creating the homepage
 def create_homepage():
+    """This function creates the home page"""
+
     # clear any widgets that have been created when navigating between pages
     clear_widgets()
 
