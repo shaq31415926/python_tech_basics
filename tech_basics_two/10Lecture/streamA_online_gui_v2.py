@@ -13,6 +13,8 @@ screen_height = 400
 
 # option 1: use the minsize function
 root.minsize(screen_width, screen_height)  # width, height
+
+
 # option 2: use the geometry function, and you can also adjust the x and y position
 # root.geometry(f'{screen_width}x{screen_height}+550+150')  # width, height, start_x, start_y
 
@@ -58,10 +60,11 @@ def new_user_page():
 
     # add a home page button - this will go back to our home page
     homepage = tk.Button(root,
-              text="🏠",
-              command=create_homepage
-              )
+                         text="🏠",
+                         command=create_homepage
+                         )
     homepage.pack(side=tk.BOTTOM)
+
 
 def create_homepage():
     """This function creates the homepage"""
@@ -74,29 +77,29 @@ def create_homepage():
 
     # add a welcome label
     welcome_label = tk.Label(root,
-                            text="WELCOME TO MY ONLINE PET PAGE",
-                            font="Arial 20 bold",
-                            fg="black",
-                            bg="white"
+                             text="WELCOME TO MY ONLINE PET PAGE",
+                             font="Arial 20 bold",
+                             fg="black",
+                             bg="white"
                              )
     welcome_label.place(x=10, y=10)
 
     # add two buttons new and returning user
     # on activation these buttons should destroy all the widgets
     new_user = tk.Button(root,
-              text="New User",
-              font=("Comic Sans MS", 14, "bold"),
-              command=new_user_page
-              )
+                         text="New User",
+                         font=("Comic Sans MS", 14, "bold"),
+                         command=new_user_page
+                         )
     new_user.pack()
 
-
     returning_user = tk.Button(root,
-              text="Returning User",
-              font=("Comic Sans MS", 14, "bold"),
-              command=clear_widgets
-              )
+                               text="Returning User",
+                               font=("Comic Sans MS", 14, "bold"),
+                               command=clear_widgets
+                               )
     returning_user.pack()
+
 
 # call my homepage definition
 create_homepage()
