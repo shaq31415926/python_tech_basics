@@ -101,7 +101,7 @@ def create_homepage():
     returning_user.pack()
 
 
-# call my homepage definition
+# call my homepage definition to create the home page when launching the gui
 create_homepage()
 
 # launch the gui
