@@ -52,11 +52,11 @@ def new_user_page():
     # call the definition that clears all the widgets
     clear_widgets()
 
-    # add a welcome label
+    # TODO: add a welcome label
 
-    # add data entry boxes and labels
+    # TODO: add data entry boxes and labels
 
-    # create a submit information button
+    # TODO: create a submit information button
 
     # add a home page button - this will go back to our home page
     homepage = tk.Button(root,
