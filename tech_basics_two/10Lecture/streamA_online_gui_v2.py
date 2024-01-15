@@ -52,11 +52,52 @@ def new_user_page():
     # call the definition that clears all the widgets
     clear_widgets()
 
-    # TODO: add a welcome label
+    # create a welcome label
+    new_label = tk.Label(root,
+                         text="WELCOME NEW USER!!",
+                         font=("Comic Sans MS", 28, "bold"))
+    new_label.pack(side=tk.TOP, anchor=tk.CENTER)
 
-    # TODO: add data entry boxes and labels
+    # Create labels and entry boxes to get user information
+    # ask for the name of the user
+    name_label = tk.Label(root,
+                          text="What is your name?!",
+                          fg="white"
+                          )
+    name_label.place(x=50, y=100)
+
+    # entry box
+    name = tk.StringVar()
+    name_box = tk.Entry(root,
+                        textvar=name,
+                        fg="white",
+                        bg="blue"
+                        )
+    name_box.place(x=200, y=100)
+
+    # ask for a user name
+    username_label = tk.Label(root,
+                              text="Create a user name",
+                              fg="white"
+                              )
+    username_label.place(x=50, y=150)
+
+    # entry box
+    username = tk.StringVar()
+    username_box = tk.Entry(root,
+                            textvar=username,
+                            fg="white",
+                            bg="blue"
+                            )
+    username_box.place(x=200, y=150)
 
     # TODO: create a submit information button
+    # create a button to store all the information
+    enter_data = tk.Button(root,
+                           text="SUBMIT INFO",
+                           # command=enter_user_data
+                           )
+    enter_data.place(x=250, y=200)
 
     # add a home page button - this will go back to our home page
     homepage = tk.Button(root,
