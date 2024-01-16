@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import messagebox
+import pandas as pd
 from src.streamB_simple_chatbot import create_chatbot_button
 from src.helpers import clear_widgets, add_image
 
@@ -19,9 +21,40 @@ def create_homepage_button():
    homepage.pack(side=tk.BOTTOM)
 
 
+def enter_user_data():
+    # add validation
+    # read the .csv file to identify all the user ids that have been created
+    user_ids = list(pd.read_csv("data/users_data.csv").user_id)
+
+    if username.get() in user_ids:
+        tk.messagebox.showwarning("WARNING", "THIS USERNAME ALREADY EXISTS!!!")
+    else:
+        # capture the data from the entry boxes as a dictionary
+        user_data = {"name_of_user": name.get(),
+                     "user_id": username.get()
+                     }
+        # convert to a data frame
+        user_data = pd.DataFrame([user_data])
+        # write as a .csv file in the data folder
+        user_data.to_csv("data/users_data.csv", index=False, mode='a', header=False)
+
+        # create your next page...
+        # clear the widgets
+        clear_widgets(root)
+
+        # place a label
+        thankyou_label = tk.Label(root,
+                                  text="Thank you for submitting for your info")
+        thankyou_label.place(x=50, y=50)
+
+        # add the homepage button
+        create_homepage_button()
+
 
 # create your new user page definition
 def create_new_userpage():
+    global username, name
+
     # clear widgets
     clear_widgets(root)
 
@@ -68,7 +101,7 @@ def create_new_userpage():
     # create a button to store all the information
     enter_data = tk.Button(root,
                            text="SUBMIT INFO",
-                           # command=enter_user_data
+                           command=enter_user_data
                            )
     enter_data.place(x=250, y=200)
 
