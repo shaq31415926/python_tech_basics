@@ -23,7 +23,9 @@ def enter_user_data():
     user_data = {"name_of_user": name.get(),
                  "username": username.get()
                  }
+    # convert the dictionary into a dataframe
     user_data = pd.DataFrame([user_data])
+    # write the dataframe to a .csv file
     user_data.to_csv("data/user_data.csv", index=False, mode='a', header=False)
 
 
