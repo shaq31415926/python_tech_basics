@@ -39,7 +39,7 @@ text_box = tk.Text(root,
                    width=60)
 text_box.place(x=0, y=30, relwidth=1, relheight=1)  # these attributes ensure it takes up the entire screen
 # add some text that introduces the chatbot
-text_box.insert(tk.END, "Bot: Hi there, what can I do for you? Please ask your question below")
+# text_box.insert(tk.END, "Bot: Hi there, what can I do for you? Please ask your question below")
 
 # create a scrollbar for the textbox
 scroll_bar = tk.Scrollbar(text_box)
