@@ -8,6 +8,7 @@ root.title("ChatBot")
 # size the size
 screen_width = 600
 screen_height = 400
+root.minsize(screen_width, screen_height)
 
 # create variables to format
 bg_colour = "#17202A"
