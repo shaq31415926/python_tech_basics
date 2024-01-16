@@ -64,3 +64,5 @@ send_button = tk.Button(root,
 send_button.place(relx=0.77,
                   rely=0.925
                       )
+
+root.mainloop()
