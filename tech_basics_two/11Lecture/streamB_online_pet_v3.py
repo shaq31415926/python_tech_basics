@@ -12,25 +12,25 @@ screen_width = 600
 screen_height = 400
 root.minsize(screen_width, screen_height)
 
+
 # create a homepage button definition
 def create_homepage_button():
-   homepage = tk.Button(root,
-                        text="🏠",
-                        command=create_homepage
-                        )
-   homepage.pack(side=tk.BOTTOM)
+    homepage = tk.Button(root,
+                         text="🏠",
+                         command=create_homepage
+                         )
+    homepage.pack(side=tk.BOTTOM)
 
 
 def user_check():
     # check if user exists
     user_ids = list(pd.read_csv("data/users_data.csv").user_id)
-    # if user exists - go to next page
+    # if user exists - go to a new page, for instance
     if user_id.get() in user_ids:
         clear_widgets(root)
     # otherwise give error
     else:
         tk.messagebox.showwarning("Warning!!", "Please register as a new user")
-
 
 
 def create_return_userpage():
@@ -41,30 +41,29 @@ def create_return_userpage():
     # ask for some user data
     # ask for a user name
     userid_label = tk.Label(root,
-                              text="Enter your user name",
-                              fg="white"
-                              )
+                            text="Enter your user name",
+                            fg="white"
+                            )
     userid_label.place(x=50, y=150)
 
     # entry box
     user_id = tk.StringVar()
     userid_box = tk.Entry(root,
-                            textvar=user_id,
-                            fg="white",
-                            bg="blue"
-                            )
+                          textvar=user_id,
+                          fg="white",
+                          bg="blue"
+                          )
     userid_box.place(x=200, y=150)
 
     # create a login button
     login_button = tk.Button(root,
-              text="Login",
-              command=user_check
-              )
+                             text="Login",
+                             command=user_check
+                             )
     login_button.place(x=200, y=190)
 
     # place the homepage button
     create_homepage_button()
-
 
 
 def enter_user_data():
@@ -194,9 +193,7 @@ def create_homepage():
     # create_chatbot_button(root)
 
 
-
 # call my homepage definition to create the home page when launching the gui
 create_homepage()
-
 
 root.mainloop()
