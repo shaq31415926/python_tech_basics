@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 import pandas as pd
 from src.helpers import add_image, clear_widgets
 # from src.simple_chatbot_v2 import create_chatbot_button
@@ -19,14 +20,31 @@ root.minsize(screen_width, screen_height)
 
 
 def enter_user_data():
-    # create a dictionary with information from the new user page
-    user_data = {"name_of_user": name.get(),
-                 "username": username.get()
-                 }
-    # convert the dictionary into a dataframe
-    user_data = pd.DataFrame([user_data])
-    # write the dataframe to a .csv file
-    user_data.to_csv("data/user_data.csv", index=False, mode='a', header=False)
+    # do a user id check
+    # read the username column
+    users_ids = list(pd.read_csv("data/user_data.csv").username)
+
+    # checking if usernames exists
+    if username.get() in users_ids:
+        tk.messagebox.showwarning("WARNING!", "THIS USERNAME ALREADY EXISTS")
+    else:
+        # create a dictionary with information from the new user page
+        user_data = {"name_of_user": name.get(),
+                     "username": username.get()
+                     }
+        # convert the dictionary into a dataframe
+        user_data = pd.DataFrame([user_data])
+        # write the dataframe to a .csv file
+        user_data.to_csv("data/user_data.csv", index=False, mode='a', header=False)
+
+    # clear all the widgets
+    clear_widgets(root)
+
+    # thank you label to say information has been submitted
+    thankyou_label = tk.Label(root,
+                              text="Thanks! Your info has been submitted")
+    thankyou_label.place(x=50, y=50)
+    # I can add more to this page here...
 
 
 def create_new_userpage():
