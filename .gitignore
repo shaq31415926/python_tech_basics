@@ -4,3 +4,5 @@ data
 */.ipynb_checkpoints/*
 previous^
 .idea
+__pycache__
+
