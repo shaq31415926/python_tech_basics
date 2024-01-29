@@ -2,11 +2,10 @@
 
 This repository contains my Tech Basics II Exam Project code. I have built a MVP for an Online Pet App:
 
-- The first page is a homepage
-- If the user clicks on the new page button, this will ask the user some information about thesemlves and then is stored xx
-- If the user clicks on the returning
-- Once the user has either successfully registered or logged in, this will take the user to XX
-
+- When you run the `app.py` you are greeted with a homepage, which has two buttons - one for a new user and one for the returning user.
+  - If this is the users first time on the app, then they will click on the new user button and register some information. This is data is stored in a .csv file. For this MVP I am sharing my test users data, but data privacy will be extremely important when I launch my app.
+  - If this the user has already registered, they can go to the returning user page and login with their information.
+- Once a user registers or successfully logs in, they will be taken to the Online Pet Page which does XYZ.
 ---
 **Your** exam project repository should contain the following:
 - Your report as a pdf file.
@@ -30,7 +29,9 @@ git clone https://github.com/shaq31415926/python_tech_basics
 cd python_tech_basics/tech_basics_two/13Lecture
 ```
 
-3. If you have activated a virtual environment, or it is your first time working with these libraries, you will need to install pandas and pillow:
+3. If you have activated a virtual environment, or it is your first time working with these libraries, you will need to install [pandas](https://pandas.pydata.org/docs/reference/general_functions.html) and [pillow](https://pypi.org/project/pillow/):
+
+
 Mac:
 ```
 pip3 install pandas pillow
