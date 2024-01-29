@@ -7,7 +7,7 @@ This repository contains my Tech Basics II Exam Project code. I have built a MVP
   - If this the user has already registered, they can go to the returning user page and login with their information.
 - Once a user registers or successfully logs in, they will be taken to the Online Pet Page where the pet changes based on the mood the user selects.
 
-![image info](./image/online_pet_mvp.png)
+<img src="./image/online_pet_mvp.png" width="200" height="200">
 
 ---
 **Your** exam project repository should contain the following:
