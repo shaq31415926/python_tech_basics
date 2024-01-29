@@ -58,16 +58,21 @@ def show_cheeky(c, root):
 
 
 def toggle_eyes(c):
+    # this function enables the eyes to blink - but this is not something I could write from scratch
     current_color = c.itemcget(eye_left, 'fill')
+
     if current_color == 'white':
         new_color = c.body_color
     else:
         new_color = 'white'
+
     current_state = c.itemcget(pupil_left, 'state')
+
     if current_state == tk.HIDDEN:
         new_state = tk.NORMAL
     else:
         new_state = tk.HIDDEN
+
     c.itemconfigure(pupil_left, state=new_state)
     c.itemconfigure(pupil_right, state=new_state)
     c.itemconfigure(eye_left, fill=new_color)
