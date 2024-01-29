@@ -1,6 +1,6 @@
-# Tech Basic II Exam project
+# Sarah Haq's Tech Basic II Exam project
 
-This repository contains Sarah Haq's Tech Basics II Exam Project code. I have built a MVP for an Online Pet App:
+This repository contains my Tech Basics II Exam Project code. I have built a MVP for an Online Pet App:
 
 - The first page is a homepage
 - If the user clicks on the new page button, this will ask the user some information about thesemlves and then is stored xx
@@ -8,7 +8,7 @@ This repository contains Sarah Haq's Tech Basics II Exam Project code. I have bu
 - Once the user has either successfully registered or logged in, this will take the user to XX
 
 ---
-Your exam project repository should contain the following:
+**Your** exam project repository should contain the following:
 - Your report as a pdf file.
 - Your python code `app.py` that carries out all the steps to build you MVP and if you are using any helper scripts, this should be placed in a separate folder.
 - Any images/music or supporting files. Please store this is a separate folder. 
